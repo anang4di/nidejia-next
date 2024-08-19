@@ -1,0 +1,31 @@
+{
+  "eslint.enable": true,
+  "editor.tabSize": 2,
+  "editor.autoIndent": "full",
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": false,
+  "editor.wrappingIndent": "indent",
+  "javascript.preferences.quoteStyle": "double",
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}
