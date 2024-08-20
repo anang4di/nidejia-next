@@ -4,7 +4,7 @@ import { useToast } from "@/components/atomics/use-toast";
 import CardBooking from "@/components/molecules/card/card-booking";
 import { DatePickerDemo } from "@/components/molecules/date-picker";
 import { moneyFormat } from "@/lib/utils";
-import { useCheckAvailableityMutation } from "@/services/transaction.service";
+import { useCheckAvailabilityMutation } from "@/services/transaction.service";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +23,7 @@ function BookingSection({ id, slug, price }: BookingSectionProps) {
 
   const { toast } = useToast();
   const router = useRouter();
-  const [checkAvailability, { isLoading }] = useCheckAvailableityMutation();
+  const [checkAvailability, { isLoading }] = useCheckAvailabilityMutation();
 
   const booking = useMemo(() => {
     let totalDays = 0,
@@ -95,7 +95,7 @@ function BookingSection({ id, slug, price }: BookingSectionProps) {
           setDate={setStartDate}
         />
         <DatePickerDemo
-          placeholder="Start Date"
+          placeholder="End Date"
           date={endDate}
           setDate={setEndDate}
         />
@@ -115,16 +115,14 @@ function BookingSection({ id, slug, price }: BookingSectionProps) {
           value={moneyFormat.format(booking.grandTotal)}
         />
       </div>
-      <Link href={`/listing/${id}/checkout`}>
-        <Button
-          variant="default"
-          className="mt-4"
-          onClick={handleBook}
-          disabled={isLoading}
-        >
-          Book Now
-        </Button>
-      </Link>
+      <Button
+        variant="default"
+        className="mt-4"
+        onClick={handleBook}
+        disabled={isLoading}
+      >
+        Book Now
+      </Button>
       <div className="bg-gray-light p-5 rounded-[20px] flex items-center space-x-4">
         <Image src="/icons/medal-star.svg" alt="icon" height={36} width={36} />
         <div>
